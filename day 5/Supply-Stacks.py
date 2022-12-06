@@ -1,6 +1,6 @@
-import re #importing regular expressions to parse the input file
+import re #importing regular expressions to parse the movements from input file
 
-#couldn't be bothered to parse the input file so I wrote the stacks into the code
+#couldn't be bothered to parse the starting stacks from input file so I wrote the stacks into the code
 stack1 = ["D", "T", "W", "N", "L"]
 stack2 = ["H", "P", "C"]
 stack3 = ["J", "M", "G", "D", "N", "H", "P", "W"]
