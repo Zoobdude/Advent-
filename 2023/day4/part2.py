@@ -3,10 +3,9 @@ list_of_lines = f.read().split('\n')
 f.close()
 
 total_score_counter = 0 #
-print(list_of_lines)
 
 for i, line in enumerate(list_of_lines):
-    print(i)
+    print((i/len(list_of_lines))*100)
     card_score_counter = 0
     
     winning_numbers, my_numbers = line.split("|")
@@ -20,16 +19,17 @@ for i, line in enumerate(list_of_lines):
         if num in winning_numbers:
             wins += 1
     
-    card_to_duplicate_index = i+1
+    card_to_duplicate_index = i
+    last_line_dupe = line
     for win in range(wins):
-        card_to_duplicate_index += 1
+        while list_of_lines[card_to_duplicate_index] == last_line_dupe:
+            card_to_duplicate_index += 1
+        
         card_duplicated =list_of_lines[card_to_duplicate_index]
         card_to_duplicate_index += 1
         list_of_lines.insert(card_to_duplicate_index, card_duplicated)
+        last_line_dupe = card_duplicated
         card_to_duplicate_index += 1
         
-        while list_of_lines[card_to_duplicate_index] == card_duplicated:
-            card_to_duplicate_index += 1
-        
-        print(list_of_lines)
-        print(len(list_of_lines))
+print("--------------")
+print(len(list_of_lines))
