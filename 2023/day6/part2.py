@@ -18,13 +18,19 @@ current_race_record = int("".join(times))
 
 print(current_race_duration, current_race_record)
 
+race_won = False 
+i = 1
+
 count_of_different_ways_to_win = 0
 for j in range(1, current_race_duration):
     distance_traveled = j * (current_race_duration - j)
     
     if distance_traveled > current_race_record:
-        count_of_different_ways_to_win += 1
+       print(j)
 
-total_methods_multiplyer *= count_of_different_ways_to_win
+print(count_of_different_ways_to_win)
 
-print(total_methods_multiplyer)
+final_win = current_race_duration - i
+count_of_wins = (final_win -i)
+
+print(count_of_wins)
